@@ -12,8 +12,11 @@ import {
 const projects = [
     {
         name: 'Sauco',
-        description: 'Sistema de Atención Único al Contribuyente',
-        href: 'http://192.168.11.3:5480'
+        description: 'Plataforma de Atención Único al Contribuyente',
+        href: 'http://192.168.11.3:5480',
+        media: '/images/sauco.png',
+        alt_media: 'Sauco Logo',
+        media_title: 'Sauco',
     },
     {
         name: 'Recaudo',
@@ -29,11 +32,11 @@ const projects = [
         media: '/images/sasi_logo.png',
         alt_media: 'Sasi Logo',
         media_title: 'Sasi',
-        href: 'http://192.168.11.3:5451'
+      href: 'https://sasi.somoscarupano.com.ve'
     },
     {
         name: 'Somos Carúpano',
-        description: 'Alcaldía Bolivariana del Municipio Bermúdez',
+        description: 'Sitio web de la Alcaldía del Municipio Bermúdez',
         media: '/images/somoscarupano.png',
         alt_media: 'Somos_carupano',
         media_title: 'Somos_carupano',
@@ -42,18 +45,21 @@ const projects = [
 ];
 
 const useStyles = makeStyles({
-    root: {
-        maxWidth: 345,
-    },
-    container: {
-        display: 'flex',
-        padding: '1em',
-        flexDirection: 'column',
-        justifyContent: 'center'
-    },
-    content: {
-        marginBottom: '15px'
-    }
+  root: {
+    maxWidth: 345,
+  },
+  container: {
+    display: 'flex',
+    padding: '1em',
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+  link: {
+    textDecoration: 'none'
+  },
+  content: {
+    marginBottom: '15px'
+  }
 });
 
 export default function Projects() {
@@ -65,6 +71,7 @@ export default function Projects() {
                 <Grid item xs={12} sm={4} key={key}>
                     <Card className={classes.root}>
                         <CardActionArea>
+                            <a href={project.href} className={classes.link}>
                             <CardMedia
                                 component="img"
                                 alt={project.alt_media}
@@ -81,8 +88,8 @@ export default function Projects() {
                                         {project.description}
                                     </Typography>
                                 </div>
-                                <Button variant="contained" color="primary" href={project.href}>Ingresar</Button>
                             </CardContent>
+                        </a>
                         </CardActionArea>
                     </Card>
                 </Grid>

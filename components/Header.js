@@ -2,6 +2,7 @@ import {
   CardMedia,
   Box,
   makeStyles,
+  useMediaQuery,
   Typography
 } from '@material-ui/core'
 // Custom components
@@ -11,12 +12,24 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    padding: theme.spacing(2),
+    [theme.breakpoints.down('sm')] : {
+      flexDirection: 'column'
+    }
+  },
+  logo: {
+    flex: '2',
+    objectFit: 'cover'
+  },
+  description: {
+    flex: '2 1 auto'
   }
 })); 
 
 export default function Header() {
   const classes = useStyles();
+  const matches = useMediaQuery('(min-width:600px)');
 
   return (
     <Box className={classes.container} m={2} p={2}>
@@ -25,10 +38,17 @@ export default function Header() {
         height='140'
         width='240'
         image='/images/dei.webp'
+        className={classes.logo}
+        size='contain'
       />
-      <Typography variant="h4" component="h1" gutterBottom>
-        Dirección de Estadísticas e Informática
-      </Typography>
+      <div className={classes.description}>
+        <Typography variant="h4" color="textSecondary" component="h1" gutterBottom>
+          Dirección de Estadísticas e Informática
+        </Typography>
+        <Typography variant="subtitle2" component="h3" color="textSecondary" gutterBottom>
+          Sitio web interno
+        </Typography>
+      </div>
     </Box>
   )
 }
