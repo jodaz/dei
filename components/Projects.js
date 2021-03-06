@@ -13,7 +13,7 @@ const projects = [
     {
         name: 'Sauco',
         description: 'Plataforma de Atención Único al Contribuyente',
-        href: 'http://192.168.11.3:5480',
+        href: 'http://10.42.0.1:5480',
         media: '/images/sauco.png',
         alt_media: 'Sauco Logo',
         media_title: 'Sauco',
@@ -24,7 +24,7 @@ const projects = [
         media: '/images/recaudo.png',
         alt_media: 'Recaudo Logo',
         media_title: 'Recaudo',
-        href: 'http://192.168.11.2'
+        href: 'http://10.42.1.1'
     },
     {
         name: 'Sasi',
