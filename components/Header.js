@@ -37,13 +37,13 @@ export default function Header() {
         component="img"
         height='140'
         width='240'
-        image='/images/dei.webp'
+        image='/images/DTI.png'
         className={classes.logo}
         size='contain'
       />
       <div className={classes.description}>
         <Typography variant="h4" color="textSecondary" component="h1" gutterBottom>
-          Dirección de Estadísticas e Informática
+          Dirección de Tecnología e Informática
         </Typography>
         <Typography variant="subtitle2" component="h3" color="textSecondary" gutterBottom>
           Sitio web interno
